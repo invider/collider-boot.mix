@@ -1,0 +1,7 @@
+{
+  "name": "collider-boot.mix",
+  "version": "0.0.1",
+  "description": "collider.jam bootstrap scripts and data",
+  "author": "Igor Khotin & Co.",
+  "license": "BSD-3-Clause"
+}
