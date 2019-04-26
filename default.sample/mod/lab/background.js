@@ -1,6 +1,7 @@
 'use strict'
 
 module.exports = {
+    Z: 0,
 
     draw: function() {
         ctx.fillStyle = '#192020'

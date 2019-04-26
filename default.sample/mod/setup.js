@@ -2,20 +2,18 @@ module.exports = function setup() {
     // create top container
     // it is the central points for event handling to all components
     const hud = sys.spawn('hud/Hud', {
-        name: 'hud'
+        Z: 10,
+        name: 'hud',
     })
 
     const l1 = sys.spawn('hud/gadget/Label', {
         name: 'label1',
         x: 30,
         y: 40,
-        text: 'Welcome to Collider JAM!',
-
-        onMouseDrag: function(dx, dy) {
-            this.x += dx
-            this.y += dy
-        }
+        text: res.welcome,
     }, 'hud')
+    sys.augment(l1, dna.hud.trait.Draggable)
+    l1.setStyle('title')
 
     const eyes = sys.augment(sys.spawn('hud/gadget/Eyes', {
         name: 'eyes',
@@ -35,8 +33,8 @@ module.exports = function setup() {
         x: 30,
         y: ctx.height - 50,
         h: 30,
-        w: 100,
-        text: 'Explore',
+        w: 120,
+        text: 'Explorer',
 
         onClick: function() {
             sys.spawn('hud/gadget/Explorer', {
