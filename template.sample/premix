@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# ===================================
+# sample bootstrap premix bash script
+# ===================================
+
+# collider.jam runs this script during the bootstrap
+# before mixing actual content in mix/
+
+echo '[bash] running premix script'
+
+# you can pass parameters from command line
+# when running jam bootstrap
+# by specifying options
+# in the following format: --option "custom option value"
+echo "[bash] option: $option"
+
+# TODO do your premix work here
+

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+# ====================================
+# sample bootstrap postmix bash script
+# ====================================
+
+# collider.jam runs this script during the bootstrap
+# right after mixing actual content in mix/
+
+echo '[bash] running postmix script'
+
+# you can pass parameters from command line
+# when running jam bootstrap
+# by specifying options
+# in the following format: --option "custom option value"
+echo "[bash] option: $option"
+
+# TODO do your premix work here
+
+echo '[bash] validating mod structure'
+
+mkdir -p ./pub
+mkdir -p ./mod/res
+mkdir -p ./mod/dna
+mkdir -p ./mod/env
+mkdir -p ./mod/lab
+mkdir -p ./mod/cue
+mkdir -p ./mod/trap
+touch ./mod/setup.js
+
