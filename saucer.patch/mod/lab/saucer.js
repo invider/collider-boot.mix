@@ -17,7 +17,7 @@ module.exports = {
         this.t -= dt
         if (this.t < 0) {
             // it's time to change the direction!
-            const max = ctx.height/10
+            const max = ctx.height/5
             this.dx = lib.math.rndi(max) - max/2
             this.dy = lib.math.rndi(max) - max/2
             this.t = lib.math.rndi(8) + 2
@@ -30,8 +30,11 @@ module.exports = {
         // check the screen edges
         if (this.x < 0 || this.x > ctx.width
                 || this.y < 0 || this.y > ctx.height) {
-            this.x = ctx.width/2
-            this.y = ctx.height/2
+
+            // go back to base in 5 seconds
+            this.dx = (ctx.width/2 - this.x)/5
+            this.dy = (ctx.height/2 - this.y)/5
+            this.t = 5
         }
     },
 
