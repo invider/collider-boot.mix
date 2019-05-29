@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+echo '[bash] running postmix script'
+
+echo '[bash] validating mod structure'
+mkdir -p ./mod/res
+mkdir -p ./mod/dna
+mkdir -p ./mod/lab
+
