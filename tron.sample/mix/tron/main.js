@@ -1,27 +1,48 @@
 const { app, BrowserWindow, Menu, MenuItem } = require('electron')
 
+let win
+
+
 const menu = new Menu()
 const menuTemplate = [
     {
         name: 'collider',
         label: 'collider',
         submenu: [
+            {
+                label: 'Fullscreen',
+                accelerator: 'CmdOrCtrl+F',
+                click: () => {
+                    if (win.isFullScreen()) {
+                        win.setFullScreen(false)
+                    } else {
+                        win.setFullScreen(true)
+                    }
+                }
+            },
             { 
-                label: 'test',
+                label: 'Dev Tools',
                 accelerator: 'CmdOrCtrl+T',
-                click: () => { console.log('test is pressed') }
+                click: () => {
+                    win.webContents.openDevTools()
+                }
             },
             {
                 type: 'separator',
             },
             {
-                label: 'exit',
+                label: 'Exit',
                 accelerator: 'CmdOrCtrl+X',
-                click: () => { console.log('exit is pressed') }
+                click: () => {
+                    app.exit()
+                }
             },
         ],
-        click: () => { console.log('going fullscreen?') }
+        click: () => {
+            console.log('going fullscreen?')
+        }
     },
+    /*
     {
         label: 'edit',
         submenu: [
@@ -33,11 +54,12 @@ const menuTemplate = [
             },
         ]
     }
+    */
 ]
 
 function createWindow () {
     //let win = new BrowserWindow({ width: 800, height: 600 })
-    let win = new BrowserWindow({
+    win = new BrowserWindow({
         title: 'Collider.JAM',
         width: 800,
         height: 600,
@@ -51,7 +73,7 @@ function createWindow () {
     //win.setMenu(menu)
     //win.setMenu(null)
     //win.removeMenu()
-	win.webContents.openDevTools()
+	//win.webContents.openDevTools()
     Menu.setApplicationMenu(Menu.buildFromTemplate(menuTemplate))
     //Menu.setApplicationMenu(null)
 
