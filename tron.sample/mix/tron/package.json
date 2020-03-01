@@ -1,0 +1,7 @@
+{
+	"name": "collider.jam",
+	"version": "0.1.0",
+	"description": "collider.jam app",
+	"productName": "Collider.JAM",
+	"main": "main.js"
+}
