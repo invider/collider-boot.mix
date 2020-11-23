@@ -1,6 +1,6 @@
 {
   "name": "collider-boot.mix",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "collider.jam bootstrap scripts and data",
   "author": "Igor Khotin & Co.",
   "license": "Zlib"
